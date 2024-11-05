@@ -8,7 +8,6 @@ import Providers from "./shared/Provider";
 import SideNav from "./shared/SideNav";
 import { cn } from "@repo/ui/lib/utils";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,12 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <main className="min-h-screen w-full bg-white text-black flex">
-        <Providers>
-          <SideNav />
-          <div className="p-8 w-full">{children}</div>
-        </Providers>
-      
+        <main className="min-h-screen w-full bg-white text-black flex">
+          <Providers>
+            <SideNav />
+          
+            <div className="p-8 w-full ml-[100px] md:ml-[200px]">{children}</div> {/* Sidebar width */}
+          </Providers>
         </main>
         <Toaster />
       </body>

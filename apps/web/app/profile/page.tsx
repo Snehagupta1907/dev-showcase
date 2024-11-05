@@ -15,7 +15,7 @@ interface UserProfile {
   profileImage: string;
   bio: string;
   imagesCreated: number;
-  generatedImages: string[]; // array of image URLs
+  generatedImages: string[]; 
 }
 
 const Profile = () => {
@@ -45,8 +45,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <section className="Profile flex flex-col items-center bg-gray-100 min-h-screen py-8">
-      {/* Profile Info */}
+    <section className="Profile flex flex-col items-center  min-h-screen py-8">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-4xl text-center mb-6">
         <div className="flex flex-col md:flex-row items-center justify-between md:gap-8">
           <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-yellow-400 mb-4 md:mb-0">

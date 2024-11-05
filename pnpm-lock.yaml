@@ -41,6 +41,9 @@ importers:
       add:
         specifier: ^2.0.6
         version: 2.0.6
+      crypto:
+        specifier: ^1.0.1
+        version: 1.0.1
       lucide-react:
         specifier: ^0.454.0
         version: 0.454.0(react@18.3.1)

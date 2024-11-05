@@ -21,13 +21,12 @@ export default function SideNav() {
   const onlyWidth = useWindowWidth();
   const mobileWidth = onlyWidth < 768;
   
-
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);
   }
 
   return (
-    <div className="relative md:min-w-fit border-r px-3 pb-10 pt-24 bg-gray-100 dark:bg-gray-800">
+    <div className={`fixed top-0 left-0 h-full md:min-w-fit border-r px-3 pb-10 pt-24 bg-gray-100 dark:bg-gray-800`}>
       {!mobileWidth && (
         <div className="absolute right-[-15px] top-7">
           <Button
@@ -45,11 +44,11 @@ export default function SideNav() {
           isCollapsed={mobileWidth ? true : isCollapsed}
           links={[
             {
-                title: "Home",
-                href: "/",
-                icon: LayoutDashboard,
-                variant: "default"
-              },
+              title: "Home",
+              href: "/",
+              icon: LayoutDashboard,
+              variant: "default"
+            },
             {
               title: "Profile",
               href: "/profile",
@@ -62,7 +61,6 @@ export default function SideNav() {
               icon: GemIcon,
               variant: "ghost"
             },
-            
           ]}
           LinkComponent={Link}
           getPathname={() => pathName}
@@ -74,11 +72,11 @@ export default function SideNav() {
           isCollapsed={mobileWidth ? true : isCollapsed}
           links={[
             {
-                title: "Home",
-                href: "/",
-                icon: LayoutDashboard,
-                variant: "default"
-              },
+              title: "Home",
+              href: "/",
+              icon: LayoutDashboard,
+              variant: "default"
+            },
             {
               title: "Login",
               href: "/login",

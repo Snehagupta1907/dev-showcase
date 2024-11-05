@@ -13,5 +13,6 @@ export default function Providers({children}: {children: React.ReactNode}) {
       accentColor: "#676FFF",
     },
   }}
+  clientId='client-WY5dQwGXwr4wkDfz1CizvJK3c5r2FHEdqqs3g3z8szt3g'
 >{children}</PrivyProvider>;
 }
