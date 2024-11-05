@@ -39,7 +39,6 @@ export default function SideNav() {
         </div>
       )}
 
-      {/* SignedIn Nav */}
       <SignedIn>
         <Nav
           isCollapsed={mobileWidth ? true : isCollapsed}
@@ -69,7 +68,6 @@ export default function SideNav() {
         />
       </SignedIn>
 
-      {/* SignedOut Nav */}
       <SignedOut>
         <Nav
           isCollapsed={mobileWidth ? true : isCollapsed}

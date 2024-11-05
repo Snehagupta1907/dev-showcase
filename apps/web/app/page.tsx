@@ -4,14 +4,14 @@ import { navLinks } from "./constants";
 import ImageCard from "./shared/ImageCard";
 
 const Home = async () => {
-  // Dummy data for image cards
+
   const imageCardsData = [
     {
       user: {
-        profileImage: '/assets/images/banner-bg.png', // Replace with actual paths
+        profileImage: '/assets/images/banner-bg.png', 
         username: 'User One',
       },
-      genImg: '/assets/images/banner-bg.png', // Replace with actual paths
+      genImg: '/assets/images/banner-bg.png', 
     },
     {
       user: {

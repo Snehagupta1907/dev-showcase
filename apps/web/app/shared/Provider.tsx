@@ -5,7 +5,7 @@ import {PrivyProvider} from '@privy-io/react-auth';
 
 export default function Providers({children}: {children: React.ReactNode}) {
   return<PrivyProvider
-  appId="cm3354dfi04u5mbx8w3a7zfx8"
+  appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID!}
   config={{
     // Customize Privy's appearance in your app
     appearance: {
