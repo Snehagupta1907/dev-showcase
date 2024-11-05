@@ -30,11 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <main className="min-h-screen w-full bg-white text-black flex">
+        <main className="min-h-screen w-full bg-black text-white flex">
           <Providers>
             <SideNav />
           
-            <div className="p-8 w-full ml-[100px] md:ml-[200px]">{children}</div> {/* Sidebar width */}
+            <div className=" w-full pl-[100px] md:pl-[180px]">{children}</div> 
           </Providers>
         </main>
         <Toaster />

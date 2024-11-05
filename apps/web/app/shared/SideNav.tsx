@@ -20,25 +20,26 @@ export default function SideNav() {
   const pathName = usePathname();
   const onlyWidth = useWindowWidth();
   const mobileWidth = onlyWidth < 768;
-  
+
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);
   }
 
   return (
-    <div className={`fixed top-0 left-0 h-full md:min-w-fit border-r px-3 pb-10 pt-24 bg-gray-100 dark:bg-gray-800`}>
+    <div className={`fixed top-0 left-0 h-full md:min-w-fit border-r px-3 pb-10 pt-24 bg-black/70 text-white transition-all duration-300`}>
       {!mobileWidth && (
         <div className="absolute right-[-15px] top-7">
           <Button
             onClick={toggleSidebar}
             variant="secondary"
-            className="rounded-full p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
+            className="rounded-full p-2 bg-gray-700 hover:bg-violet-700"
           >
             <ChevronRight />
           </Button>
         </div>
       )}
-      
+
+      {/* SignedIn Nav */}
       <SignedIn>
         <Nav
           isCollapsed={mobileWidth ? true : isCollapsed}
@@ -47,26 +48,28 @@ export default function SideNav() {
               title: "Home",
               href: "/",
               icon: LayoutDashboard,
-              variant: "default"
+              variant: "default",
             },
             {
               title: "Profile",
               href: "/profile",
               icon: UsersRound,
-              variant: "ghost"
+              variant: "ghost",
             },
             {
               title: "Art Generation",
               href: "/art-generator",
               icon: GemIcon,
-              variant: "ghost"
+              variant: "ghost",
             },
           ]}
           LinkComponent={Link}
           getPathname={() => pathName}
+         
         />
       </SignedIn>
 
+      {/* SignedOut Nav */}
       <SignedOut>
         <Nav
           isCollapsed={mobileWidth ? true : isCollapsed}
@@ -75,17 +78,18 @@ export default function SideNav() {
               title: "Home",
               href: "/",
               icon: LayoutDashboard,
-              variant: "default"
+              variant: "default",
             },
             {
               title: "Login",
               href: "/login",
               icon: UsersRound,
-              variant: "ghost"
+              variant: "ghost",
             },
           ]}
           LinkComponent={Link}
           getPathname={() => pathName}
+          
         />
       </SignedOut>
     </div>

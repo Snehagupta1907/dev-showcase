@@ -37,19 +37,19 @@ const Home = async () => {
   ];
 
   return (
-    <>
+    <div className="py-8 px-4">
       <section
-        className="home relative flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat rounded-lg"
+        className="home relative  flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat rounded-lg"
         style={{ backgroundImage: "url('/assets/images/banner-bg.png')" }}
       >
         <div className="bg-black/70 w-full h-full absolute top-0 left-0 z-10"></div>
 
         <div className="relative z-20 p-8 rounded-lg">
-          <h1 className="text-lg sm:text-5xl lg:text-6xl font-extrabold text-white mb-4 transition-transform transform hover:scale-105">
+          <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-4">
             Your AI Magic Artist{" "}
-            <span className="text-yellow-400">Who Never Gets Tired!</span>
+            <span className="text-violet-400">Who Never Gets Tired!</span>
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-md lg:text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
             Transform your ideas into stunning visuals effortlessly and with creativity.
           </p>
 
@@ -69,7 +69,7 @@ const Home = async () => {
                       className="p-2"
                     />
                   </div>
-                  <span className="text-white font-semibold text-sm md:text-base group-hover:text-yellow-400 transition-colors">
+                  <span className="text-white font-semibold text-sm md:text-base group-hover:text-violet-400 transition-colors">
                     {link.label}
                   </span>
                 </Link>
@@ -90,7 +90,7 @@ const Home = async () => {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

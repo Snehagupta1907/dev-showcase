@@ -64,11 +64,11 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       {!imageUrl ? (
-        <div className="flex flex-col items-center justify-center max-w-lg p-8 bg-white rounded-lg shadow-md">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">Image Generator</h1>
-          <p className="mb-6 text-gray-600 text-center">
+        <div className="flex flex-col items-center justify-center max-w-lg p-8 bg-gray-950 rounded-lg shadow-md">
+          <h1 className="text-4xl font-bold mb-4 text-white">Image Generator</h1>
+          <p className="mb-6 text-gray-400 text-center">
             Enter a prompt below to generate an image using our AI model.
           </p>
           <Input
@@ -76,12 +76,12 @@ export default function Page() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="What do you want to create?"
-            className="w-full mb-5 p-4 border border-gray-300 rounded-lg shadow-sm bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full mb-5 p-4 border border-gray-700 rounded-lg shadow-sm bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
           />
           <Button
             onClick={generateImage}
             disabled={loading}
-            className="w-full py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-500 transition duration-300 ease-in-out"
+            className="w-full py-3 rounded-lg bg-violet-600 text-white hover:bg-violet-500 transition duration-300 ease-in-out"
           >
             {loading ? "Generating..." : "Generate Image"}
           </Button>
@@ -94,12 +94,12 @@ export default function Page() {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="What do you want to create?"
-              className="w-full px-4 border border-gray-300 rounded-lg shadow-sm bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 border border-gray-700 rounded-lg shadow-sm bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
             <Button
               onClick={generateImage}
               disabled={loading}
-              className="ml-2 py-3 flex-col rounded-lg bg-purple-600 text-white hover:bg-purple-500 transition duration-300 ease-in-out"
+              className="ml-2 py-3 flex-col rounded-lg bg-violet-600 text-white hover:bg-violet-500 transition duration-300 ease-in-out"
             >
               {loading ? "Generating..." : "Generate Image"}
             </Button>
@@ -108,13 +108,13 @@ export default function Page() {
           {loading ? (
             <div className="flex items-center justify-center">
               {/* Tailwind CSS spinner */}
-              <div className="animate-spin rounded-full h-8 w-8 border-b-4 border-purple-600 border-t-transparent"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-4 border-violet-600 border-t-transparent"></div>
             </div>
           ) : (
             <img
               src={imageUrl}
               alt="Generated"
-              className="max-w-md h-auto rounded-lg shadow-lg border-2 border-purple-600 mb-4"
+              className="max-w-md h-auto rounded-lg shadow-lg border-2 border-violet-600 mb-4"
             />
           )}
         </div>
