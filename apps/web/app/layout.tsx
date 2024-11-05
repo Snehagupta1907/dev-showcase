@@ -1,6 +1,13 @@
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "@repo/ui/globals.css";
+import { Toaster } from "@repo/ui/components/ui/toaster";
+import Providers from "./shared/Provider";
+import SideNav from "./shared/SideNav";
+import { cn } from "@repo/ui/lib/utils";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <main className="min-h-screen w-full bg-white text-black flex">
+        <Providers>
+          <SideNav />
+          <div className="p-8 w-full">{children}</div>
+        </Providers>
+      
+        </main>
+        <Toaster />
       </body>
     </html>
   );

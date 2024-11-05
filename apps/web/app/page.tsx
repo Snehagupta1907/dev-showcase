@@ -1,99 +1,93 @@
 import Image from "next/image";
-import { Button } from "@repo/ui/button";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { navLinks } from "./constants";
+import ImageCard from "./shared/ImageCard";
 
-export default function Home() {
+const Home = async () => {
+  // Dummy data for image cards
+  const imageCardsData = [
+    {
+      user: {
+        profileImage: '/assets/images/banner-bg.png', // Replace with actual paths
+        username: 'User One',
+      },
+      genImg: '/assets/images/banner-bg.png', // Replace with actual paths
+    },
+    {
+      user: {
+        profileImage: '/assets/images/banner-bg.png',
+        username: 'User Two',
+      },
+      genImg: '/assets/images/banner-bg.png',
+    },
+    {
+      user: {
+        profileImage: '/assets/images/banner-bg.png',
+        username: 'User Three',
+      },
+      genImg: '/assets/images/banner-bg.png',
+    },
+    {
+      user: {
+        profileImage: '/assets/images/banner-bg.png',
+        username: 'User Four',
+      },
+      genImg: '/assets/images/banner-bg.png',
+    },
+  ];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <section className="home relative flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: "url('/assets/images/banner-bg.png')" }}>
+        
+        <div className="bg-black/70 w-full h-full absolute top-0 left-0 z-10"></div>
+        
+        <div className="relative z-20 p-8">
+          <h1 className="text-5xl lg:text-6xl font-extrabold text-white mb-4 transition-transform transform hover:scale-105">
+            Your AI Magic Artist{" "}
+            <span className="text-yellow-400">Who Never Gets Tired!</span>
+          </h1>
+          <p className="text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Transform your ideas into stunning visuals effortlessly and with creativity.
+          </p>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          <ul className="w-full flex justify-center gap-10 md:gap-16 mt-8">
+            {navLinks.slice(1, 5).map((link) => (
+              <li key={link.route} className="text-center">
+                <Link href={link.route} className="flex flex-col items-center gap-4 group transition-transform duration-300 ease-in-out hover:scale-110">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <Image
+                      src={link.icon}
+                      alt="icon image"
+                      width={32}
+                      height={32}
+                      className="p-2"
+                    />
+                  </div>
+                  <span className="text-white font-semibold text-sm md:text-base group-hover:text-yellow-400 transition-colors">
+                    {link.label}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <Button appName="web" className={styles.secondary}>
-          Open alert
-        </Button>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file-text.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="bg-gray-50 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+          {imageCardsData.map((data, index) => (
+            <ImageCard
+              key={index}
+              user={{ profileImage: data.user.profileImage, username: data.user.username }}
+              genImg={data.genImg}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
-}
+};
+
+export default Home;
