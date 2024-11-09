@@ -1,6 +1,6 @@
 // import { PrivyClient } from '@privy-io/server-auth';
 
-// const client = new PrivyClient(process.env.PRIVY_APP_ID!, process.env.PRIVY_APP_SECRET!);
+// const client = new PrivyClient(process.env.PRIVY_APP_ID!, process.env.NEXT_PUBLIC_PRIVY_APP_SECRET!);
 
 // export async function verifyToken(token: string) {
 //   try {

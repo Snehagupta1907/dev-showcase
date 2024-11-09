@@ -1,8 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
+## Project Structure
+
+The monorepo includes two main packages:
+
+- **`apps/web`**: The main Next.js application, providing a "Dev Showcase" where users can log in, view their profile, and generate AI art based on text prompts.
+- **`packages/ui`**: A custom UI library built using components from `shadcn/ui`, tailored to support the main application.
+
 ## Getting Started
 
-First, run the development server:
+Change directory to img-gen 
+
+### 1. Install Dependencies
+
+First in apps/web folder and in packages
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -19,6 +32,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+
+## Configure Environment Variables
+
+Create a .env.local file in the project root by copying env.example.
+
+The .env.local file should include necessary environment variables, especially for Privy.io authentication and fal.ai API integration for AI image generation.
 
 ## Learn More
 
