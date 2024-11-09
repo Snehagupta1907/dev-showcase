@@ -9,8 +9,6 @@ The monorepo includes two main packages:
 
 ## Getting Started
 
-Change directory to img-gen 
-
 ### 1. Install Dependencies
 
 First in apps/web folder and in packages
